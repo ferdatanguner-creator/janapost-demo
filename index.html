@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!-- saved from url=(0238)file:///Users/ferdatanguner/Library/Application%20Support/Claude/local-agent-mode-sessions/97fd2856-3cb5-428e-a048-874c8b342a31/b8462c9e-c015-4e99-b63a-d82d16bbd4bd/local_2bf07372-ae11-4b5e-9c39-02d8ddedfd87/outputs/janapost_demo_app.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jańa Post</title>
+  <!-- Amplitude unified script — includes analytics + session replay -->
+  <script src="./Jańa Post_files/aae40209c4a54b4670384b69ff1b5ad2.js"></script><script src="./Jańa Post_files/aae40209c4a54b4670384b69ff1b5ad2.async.js" async="" type="text/javascript"></script>
+  <!-- Amplitude exact recommended init: SR plugin added BEFORE init, inline, immediately after CDN loads -->
+  <script>
+    window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+    window.amplitude.init('aae40209c4a54b4670384b69ff1b5ad2', {"fetchRemoteConfig":true,"autocapture":true});
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    :root {
+      --blue: #0066CC; --blue-dark: #0052a3; --blue-light: #e8f0fb;
+      --orange: #FF6B00; --orange-light: #fff3e8;
+      --green: #16a34a; --green-light: #dcfce7;
+      --red: #EE3A2D; --red-light: #fee2e2;
+      --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+      --gray-400: #9ca3af; --gray-600: #4b5563; --gray-800: #1f2937;
+      --text: #111827; --radius: 12px; --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    html, body { height: 100%; background: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #app { max-width: 430px; margin: 0 auto; height: 100vh; display: flex; flex-direction: column; background: #fff; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(0,0,0,0.15); }
+
+    /* HEADER */
+    #app-header { background: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 100; min-height: 56px; }
+    .header-logo { display: flex; align-items: center; gap: 8px; }
+    .logo-icon { width: 32px; height: 32px; background: var(--blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { fill: white; width: 18px; height: 18px; }
+    .logo-text { font-size: 18px; font-weight: 700; color: var(--blue); letter-spacing: -0.3px; }
+    .logo-text span { color: var(--orange); }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .cart-btn { position: relative; background: var(--blue-light); border: none; border-radius: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; }
+    .cart-badge { position: absolute; top: -4px; right: -4px; background: var(--red); color: white; font-size: 10px; font-weight: 700; border-radius: 10px; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px; }
+    .demo-badge { background: var(--orange); color: white; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+
+    /* SCREEN */
+    #screen { flex: 1; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; background: var(--gray-50); }
+    #screen::-webkit-scrollbar { display: none; }
+
+    /* BOTTOM NAV */
+    #bottom-nav { background: #fff; border-top: 1px solid var(--gray-200); display: flex; padding: 8px 0 max(8px, env(safe-area-inset-bottom)); }
+    .nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; border: none; background: none; cursor: pointer; padding: 4px; color: var(--gray-400); font-size: 10px; font-weight: 500; transition: color 0.15s; }
+    .nav-btn.active { color: var(--blue); }
+    .nav-btn svg { width: 22px; height: 22px; }
+    .nav-btn.active svg path, .nav-btn.active svg rect, .nav-btn.active svg circle { fill: var(--blue); }
+
+    /* COMMON COMPONENTS */
+    .screen-pad { padding: 16px; }
+    .section-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .btn-primary { width: 100%; background: var(--blue); color: white; border: none; border-radius: 12px; padding: 16px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-primary:active { background: var(--blue-dark); }
+    .btn-secondary { width: 100%; background: #fff; color: var(--blue); border: 2px solid var(--blue); border-radius: 12px; padding: 14px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .btn-red { width: 100%; background: var(--red); color: white; border: none; border-radius: 12px; padding: 16px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .tag { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .tag-blue { background: var(--blue-light); color: var(--blue); }
+    .tag-orange { background: var(--orange-light); color: var(--orange); }
+    .tag-green { background: var(--green-light); color: var(--green); }
+
+    /* HOME SCREEN */
+    .hero { background: linear-gradient(135deg, var(--blue) 0%, #003d99 100%); padding: 24px 16px 32px; color: white; }
+    .hero h1 { font-size: 22px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
+    .hero p { font-size: 13px; opacity: 0.85; margin-bottom: 16px; }
+    .hero-stats { display: flex; gap: 12px; }
+    .hero-stat { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 10px; text-align: center; flex: 1; }
+    .hero-stat-num { font-size: 15px; font-weight: 700; }
+    .hero-stat-label { font-size: 10px; opacity: 0.8; }
+    .search-bar { margin: -20px 16px 0; background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: flex; align-items: center; padding: 0 14px; gap: 10px; }
+    .search-bar input { flex: 1; border: none; outline: none; padding: 14px 0; font-size: 14px; color: var(--text); background: transparent; }
+    .search-bar input::placeholder { color: var(--gray-400); }
+    .search-bar button { background: var(--blue); color: white; border: none; border-radius: 8px; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .categories { padding: 28px 16px 0; }
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .category-card { background: #fff; border-radius: 12px; padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.15s; }
+    .category-card:active { transform: scale(0.95); }
+    .cat-icon { font-size: 24px; }
+    .cat-name { font-size: 11px; font-weight: 600; color: var(--gray-600); text-align: center; }
+    .popular-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 0 16px 4px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+    .popular-scroll::-webkit-scrollbar { display: none; }
+
+    /* PRODUCT CARD */
+    .product-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: transform 0.15s; flex-shrink: 0; }
+    .product-card:active { transform: scale(0.97); }
+    .product-card.scroll-card { width: 160px; scroll-snap-align: start; }
+    .product-img { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+    .product-img.tall { height: 160px; }
+    .product-info { padding: 10px; }
+    .product-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .product-price { font-size: 13px; color: var(--orange); font-weight: 700; }
+    .product-shipping { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 16px; }
+    .product-card-grid .product-img { height: 140px; }
+    .add-cart-mini { margin-top: 8px; background: var(--blue); color: white; border: none; border-radius: 8px; padding: 8px; font-size: 12px; font-weight: 600; cursor: pointer; width: 100%; }
+
+    /* ITEM DETAIL */
+    .item-hero { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 72px; position: relative; }
+    .back-btn { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.9); border: none; border-radius: 10px; width: 36px; height: 36px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+    .item-body { padding: 20px 16px; }
+    .item-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+    .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+    .price-cny { font-size: 26px; font-weight: 800; color: var(--orange); }
+    .price-kzt { font-size: 14px; color: var(--gray-600); }
+    .info-row { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 13px; color: var(--gray-600); }
+    .info-row strong { color: var(--text); margin-left: auto; font-size: 13px; }
+    .item-desc { font-size: 14px; color: var(--gray-600); line-height: 1.6; margin: 16px 0; }
+
+    /* CART */
+    .cart-item { display: flex; gap: 12px; padding: 14px 16px; background: #fff; border-bottom: 1px solid var(--gray-100); align-items: center; }
+    .cart-item-img { width: 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+    .cart-item-info { flex: 1; }
+    .cart-item-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .cart-item-price { font-size: 13px; color: var(--orange); font-weight: 700; }
+    .remove-btn { background: var(--gray-100); border: none; border-radius: 8px; width: 30px; height: 30px; font-size: 16px; cursor: pointer; color: var(--gray-600); }
+    .summary-box { background: #fff; margin: 12px 16px; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .summary-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; color: var(--gray-600); }
+    .summary-row.total { font-size: 16px; font-weight: 700; color: var(--text); border-top: 1px solid var(--gray-200); margin-top: 8px; padding-top: 12px; }
+    .rate-note { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 6px; }
+
+    /* CHECKOUT */
+    .form-section { background: #fff; margin: 12px 16px; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .form-section-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .form-group { margin-bottom: 14px; }
+    .form-label { font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; display: block; }
+    .form-input { width: 100%; border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 12px 14px; font-size: 14px; color: var(--text); outline: none; background: var(--gray-50); transition: border-color 0.15s; }
+    .form-input:focus { border-color: var(--blue); background: #fff; }
+    .verified-badge { display: inline-flex; align-items: center; gap: 4px; background: var(--green-light); color: var(--green); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; margin-left: 8px; }
+    .delivery-toggle { display: flex; background: var(--gray-100); border-radius: 10px; padding: 3px; margin-bottom: 14px; }
+    .delivery-opt { flex: 1; padding: 8px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; color: var(--gray-600); transition: all 0.15s; }
+    .delivery-opt.active { background: #fff; color: var(--blue); font-weight: 700; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .branch-select { width: 100%; border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--text); background: var(--gray-50); outline: none; appearance: none; cursor: pointer; }
+
+    /* PAYMENT */
+    .payment-screen { padding: 24px 16px; }
+    .kaspi-header { text-align: center; margin-bottom: 24px; }
+    .kaspi-logo { font-size: 28px; font-weight: 900; color: var(--red); margin-bottom: 4px; letter-spacing: -1px; }
+    .kaspi-sub { font-size: 13px; color: var(--gray-400); }
+    .payment-card-box { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 16px; padding: 24px; color: white; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .payment-card-box::before { content: ''; position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+    .card-chip { font-size: 24px; margin-bottom: 16px; }
+    .card-number { font-size: 16px; letter-spacing: 4px; font-weight: 600; margin-bottom: 16px; font-family: monospace; }
+    .card-row { display: flex; justify-content: space-between; }
+    .card-label { font-size: 10px; opacity: 0.6; margin-bottom: 2px; }
+    .card-value { font-size: 13px; font-weight: 600; }
+    .amount-display { text-align: center; margin-bottom: 24px; }
+    .amount-label { font-size: 13px; color: var(--gray-400); margin-bottom: 4px; }
+    .amount-value { font-size: 32px; font-weight: 800; color: var(--text); }
+    .amount-currency { font-size: 16px; color: var(--gray-600); font-weight: 600; }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--gray-200); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ERROR SCREEN */
+    .error-icon { font-size: 56px; text-align: center; margin-bottom: 12px; }
+    .error-title { font-size: 20px; font-weight: 700; color: var(--red); text-align: center; margin-bottom: 8px; }
+    .error-msg { font-size: 14px; color: var(--gray-600); text-align: center; margin-bottom: 8px; line-height: 1.5; }
+    .error-code { font-size: 11px; color: var(--gray-400); text-align: center; font-family: monospace; background: var(--gray-100); padding: 6px 12px; border-radius: 6px; margin-bottom: 24px; }
+
+    /* SUCCESS SCREEN */
+    .success-anim { text-align: center; padding: 32px 16px 16px; }
+    .success-icon { font-size: 72px; margin-bottom: 12px; animation: popIn 0.4s ease; }
+    @keyframes popIn { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
+    .success-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .success-sub { font-size: 14px; color: var(--gray-600); line-height: 1.5; margin-bottom: 20px; }
+    .order-info-box { background: var(--blue-light); border-radius: var(--radius); padding: 16px; margin: 0 16px 16px; }
+    .order-info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+    .order-info-label { color: var(--gray-600); }
+    .order-info-value { font-weight: 600; color: var(--text); }
+    .tracking-steps { padding: 0 16px 16px; }
+    .tracking-step { display: flex; gap: 12px; padding: 10px 0; position: relative; }
+    .tracking-step:not(:last-child)::after { content: ''; position: absolute; left: 10px; top: 30px; bottom: -10px; width: 2px; background: var(--gray-200); }
+    .step-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; font-weight: 700; }
+    .step-dot.active { background: var(--blue); color: white; }
+    .step-dot.done { background: var(--green); color: white; }
+    .step-dot.pending { background: var(--gray-200); color: var(--gray-400); }
+    .step-info .step-title { font-size: 13px; font-weight: 600; color: var(--text); }
+    .step-info .step-sub { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+
+    /* ORDERS */
+    .order-item { background: #fff; margin: 0 16px 12px; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); cursor: pointer; }
+    .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .order-num { font-size: 14px; font-weight: 700; color: var(--text); }
+    .order-date { font-size: 12px; color: var(--gray-400); }
+    .order-items-preview { font-size: 13px; color: var(--gray-600); margin-bottom: 10px; }
+    .order-footer { display: flex; justify-content: space-between; align-items: center; }
+    .order-amount { font-size: 15px; font-weight: 700; color: var(--text); }
+
+    /* PROFILE */
+    .profile-header { background: linear-gradient(135deg, var(--blue) 0%, #003d99 100%); padding: 32px 16px 40px; text-align: center; color: white; }
+    .profile-avatar { width: 72px; height: 72px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 12px; border: 3px solid rgba(255,255,255,0.4); }
+    .profile-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .profile-email { font-size: 13px; opacity: 0.8; }
+    .profile-stats { display: flex; background: #fff; margin: -20px 16px 0; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .profile-stat { flex: 1; padding: 16px; text-align: center; border-right: 1px solid var(--gray-100); }
+    .profile-stat:last-child { border-right: none; }
+    .profile-stat-num { font-size: 20px; font-weight: 800; color: var(--blue); }
+    .profile-stat-label { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+    .menu-list { background: #fff; margin: 16px; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .menu-item { display: flex; align-items: center; gap: 12px; padding: 16px; border-bottom: 1px solid var(--gray-100); cursor: pointer; }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-icon { font-size: 20px; width: 36px; height: 36px; background: var(--gray-100); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .menu-label { flex: 1; font-size: 14px; font-weight: 500; color: var(--text); }
+    .menu-arrow { color: var(--gray-400); font-size: 16px; }
+
+    /* MARKETPLACE FILTER */
+    .filter-tabs { display: flex; gap: 8px; padding: 12px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; background: #fff; border-bottom: 1px solid var(--gray-100); }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .filter-tab { padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; border: 1.5px solid var(--gray-200); color: var(--gray-600); background: #fff; transition: all 0.15s; flex-shrink: 0; }
+    .filter-tab.active { background: var(--blue); color: white; border-color: var(--blue); font-weight: 600; }
+
+    /* EMPTY STATE */
+    .empty-state { padding: 60px 24px; text-align: center; }
+    .empty-icon { font-size: 56px; margin-bottom: 16px; }
+    .empty-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .empty-sub { font-size: 14px; color: var(--gray-400); margin-bottom: 24px; line-height: 1.5; }
+
+    /* TOAST */
+    #toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--gray-800); color: white; padding: 10px 20px; border-radius: 20px; font-size: 13px; font-weight: 500; z-index: 999; opacity: 0; transition: all 0.25s; pointer-events: none; white-space: nowrap; }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* SCREEN TRANSITION */
+    .screen-enter { animation: slideIn 0.2s ease; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+  </style>
+<script src="./Jańa Post_files/plugin-session-replay-browser-1.31.0-min.js.gz" integrity="sha384-gvzN/Wz4DUJkpQCTdXiZY+3xCbgdOZqejlolqxofNfLT27KmMYkdu1cbLj85JqVg" crossorigin="anonymous"></script><script src="./Jańa Post_files/analytics-browser-2.42.4-min.js.gz" integrity="sha384-lKBFu+lrE+l3rHaNqttqd3e3ga1kwCKyeO1JiVVq2NlrrkHTdt8SobN3bqqLSKSw" crossorigin="anonymous"></script></head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <div id="app-header">
+    <div class="header-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5L21.46 12H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm13.5-1c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1z"></path></svg>
+      </div>
+      <span class="logo-text">Jańa <span>Post</span></span>
+    </div>
+    <div class="header-actions">
+      <span class="demo-badge">Demo</span>
+      <button class="cart-btn" onclick="navigate(&#39;cart&#39;)">
+        🛒
+        <span class="cart-badge" id="cart-count" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN AREA -->
+  <div id="screen" class="screen-enter">
+    <div class="hero">
+      <h1>Order from China.<br>Delivered to Kazakhstan.</h1>
+      <p>Fast, reliable logistics from Chinese marketplaces to your door</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">500K+</div><div class="hero-stat-label">Users</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">500</div><div class="hero-stat-label">Branches</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">4M</div><div class="hero-stat-label">Parcels/mo</div></div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" id="search-input" placeholder="Search products from China...">
+      <button onclick="doSearch()">Search</button>
+    </div>
+    <div class="categories" style="padding-top:28px;">
+      <div class="section-title" style="padding:0 0 12px;">Browse Categories</div>
+      <div class="category-grid">
+        <div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Clothing&#39;})"><div class="cat-icon">👗</div><div class="cat-name">Clothing</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Electronics&#39;})"><div class="cat-icon">📱</div><div class="cat-name">Electronics</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Home Goods&#39;})"><div class="cat-icon">🏠</div><div class="cat-name">Home Goods</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Cosmetics&#39;})"><div class="cat-icon">💄</div><div class="cat-name">Cosmetics</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Toys&#39;})"><div class="cat-icon">🧸</div><div class="cat-name">Toys</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;Sports&#39;})"><div class="cat-icon">⚽</div><div class="cat-name">Sports</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;All&#39;})"><div class="cat-icon">🛍</div><div class="cat-name">All</div></div><div class="category-card" onclick="navigate(&#39;marketplace&#39;,{activeFilter:&#39;All&#39;})"><div class="cat-icon">🔥</div><div class="cat-name">Deals</div></div>
+      </div>
+    </div>
+    <div style="padding:20px 0 4px;">
+      <div class="section-title" style="padding:0 16px 12px;">🔥 Popular This Week</div>
+      <div class="popular-scroll">
+        
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:1})">
+            <div class="product-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">👗</div>
+            <div class="product-info">
+              <div class="product-name">Women's Summer Dress</div>
+              <div class="product-price">¥89</div>
+              <div class="product-shipping">+2,400 KZT shipping</div>
+            </div>
+          </div>
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:2})">
+            <div class="product-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)">🎧</div>
+            <div class="product-info">
+              <div class="product-name">Wireless Earbuds Pro</div>
+              <div class="product-price">¥156</div>
+              <div class="product-shipping">+2,800 KZT shipping</div>
+            </div>
+          </div>
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:3})">
+            <div class="product-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">💡</div>
+            <div class="product-info">
+              <div class="product-name">LED Desk Lamp</div>
+              <div class="product-price">¥67</div>
+              <div class="product-shipping">+2,100 KZT shipping</div>
+            </div>
+          </div>
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:4})">
+            <div class="product-img" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👟</div>
+            <div class="product-info">
+              <div class="product-name">Men's Running Shoes</div>
+              <div class="product-price">¥210</div>
+              <div class="product-shipping">+3,200 KZT shipping</div>
+            </div>
+          </div>
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:5})">
+            <div class="product-img" style="background:linear-gradient(135deg,#fa709a,#fee140)">🧴</div>
+            <div class="product-info">
+              <div class="product-name">Skincare Set 5-in-1</div>
+              <div class="product-price">¥134</div>
+              <div class="product-shipping">+2,600 KZT shipping</div>
+            </div>
+          </div>
+          <div class="product-card scroll-card" onclick="navigate(&#39;item&#39;,{selectedProduct:6})">
+            <div class="product-img" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">🧩</div>
+            <div class="product-info">
+              <div class="product-name">Kids Building Blocks</div>
+              <div class="product-price">¥78</div>
+              <div class="product-shipping">+2,300 KZT shipping</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div style="height:20px;"></div></div>
+
+  <!-- BOTTOM NAV -->
+  <nav id="bottom-nav">
+    <button class="nav-btn active" id="nav-home" onclick="navigate(&#39;home&#39;)">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#9ca3af"></path></svg>
+      Home
+    </button>
+    <button class="nav-btn" id="nav-marketplace" onclick="navigate(&#39;marketplace&#39;)">
+      <svg viewBox="0 0 24 24"><path d="M19 6H17.82C17.4 4.84 16.3 4 15 4H9C7.7 4 6.6 4.84 6.18 6H5C3.9 6 3 6.9 3 8V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V8C21 6.9 20.1 6 19 6ZM9 6H15V8H9V6ZM19 20H5V8H7V10H17V8H19V20Z" fill="#9ca3af"></path></svg>
+      Shop
+    </button>
+    <button class="nav-btn" id="nav-orders" onclick="navigate(&#39;orders&#39;)">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4v2l8 5 8-5V4zM4 8.5V20h16V8.5l-8 5-8-5z" fill="#9ca3af"></path></svg>
+      Orders
+    </button>
+    <button class="nav-btn" id="nav-profile" onclick="navigate(&#39;profile&#39;)">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#9ca3af"></path></svg>
+      Profile
+    </button>
+  </nav>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+const API_KEY = 'aae40209c4a54b4670384b69ff1b5ad2';
+
+const PRODUCTS = [
+  { id:1, name:"Women's Summer Dress", cat:"Clothing", cny:89, kzt:2400, emoji:"👗", grad:"linear-gradient(135deg,#667eea,#764ba2)", desc:"Lightweight floral dress, perfect for summer. Available in sizes S-XL. Machine washable fabric, easy care." },
+  { id:2, name:"Wireless Earbuds Pro", cat:"Electronics", cny:156, kzt:2800, emoji:"🎧", grad:"linear-gradient(135deg,#f093fb,#f5576c)", desc:"Bluetooth 5.3, 30hr battery, active noise cancellation. Compact charging case included. Water resistant IPX5." },
+  { id:3, name:"LED Desk Lamp", cat:"Home Goods", cny:67, kzt:2100, emoji:"💡", grad:"linear-gradient(135deg,#4facfe,#00f2fe)", desc:"5 brightness levels, USB-A charging port on base, eye-care flicker-free mode. Adjustable gooseneck arm." },
+  { id:4, name:"Men's Running Shoes", cat:"Clothing", cny:210, kzt:3200, emoji:"👟", grad:"linear-gradient(135deg,#43e97b,#38f9d7)", desc:"Lightweight mesh upper with cushioned foam sole. Sizes 39–46. Breathable design for long-distance comfort." },
+  { id:5, name:"Skincare Set 5-in-1", cat:"Cosmetics", cny:134, kzt:2600, emoji:"🧴", grad:"linear-gradient(135deg,#fa709a,#fee140)", desc:"Includes cleanser, toner, vitamin C serum, moisturizer, and eye cream. Suitable for all skin types. Dermatologist tested." },
+  { id:6, name:"Kids Building Blocks", cat:"Toys", cny:78, kzt:2300, emoji:"🧩", grad:"linear-gradient(135deg,#a18cd1,#fbc2eb)", desc:"150-piece creative building set. Non-toxic ABS plastic. Compatible with major brands. Suitable for ages 3+." },
+  { id:7, name:"Stainless Steel Thermos", cat:"Home Goods", cny:45, kzt:1900, emoji:"♨️", grad:"linear-gradient(135deg,#ffecd2,#fcb69f)", desc:"500ml double-walled vacuum insulation. Keeps hot 12hr, cold 24hr. Leak-proof lid. BPA-free food grade steel." },
+  { id:8, name:"Yoga Mat Premium", cat:"Sports", cny:112, kzt:2500, emoji:"🧘", grad:"linear-gradient(135deg,#a1c4fd,#c2e9fb)", desc:"6mm eco-friendly TPE, non-slip textured surface. Includes carry strap. 183×61cm. Available in 6 colors." },
+  { id:9, name:"Phone Stand Adjustable", cat:"Electronics", cny:34, kzt:1800, emoji:"📱", grad:"linear-gradient(135deg,#d4fc79,#96e6a1)", desc:"360° rotation, foldable aluminium. Compatible with all phones 4–7 inch. Desktop, kitchen, or car use." },
+  { id:10, name:"Winter Jacket Puffer", cat:"Clothing", cny:298, kzt:3800, emoji:"🧥", grad:"linear-gradient(135deg,#30cfd0,#330867)", desc:"Goose-down fill, windproof shell, water-resistant coating. Sizes S–XXXL. 5 colors. Packable into carry bag." },
+  { id:11, name:"Makeup Brush Set", cat:"Cosmetics", cny:56, kzt:2000, emoji:"💄", grad:"linear-gradient(135deg,#f6d365,#fda085)", desc:"18-piece professional set with synthetic, cruelty-free bristles. Includes carrying roll case. Hand-crafted handles." },
+  { id:12, name:"Portable Blender", cat:"Home Goods", cny:89, kzt:2200, emoji:"🥤", grad:"linear-gradient(135deg,#89f7fe,#66a6ff)", desc:"USB-C rechargeable, 6 stainless blades, 380ml BPA-free jar. 45-second blend cycle. Perfect for smoothies." },
+];
+
+const CATEGORIES = [
+  { name:"Clothing", emoji:"👗" }, { name:"Electronics", emoji:"📱" },
+  { name:"Home Goods", emoji:"🏠" }, { name:"Cosmetics", emoji:"💄" },
+  { name:"Toys", emoji:"🧸" }, { name:"Sports", emoji:"⚽" },
+  { name:"All", emoji:"🛍" }, { name:"Deals", emoji:"🔥" },
+];
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
+const state = {
+  screen: 'home',
+  cart: [],
+  selectedProduct: null,
+  marketplaceBrowseCount: 0,
+  activeFilter: 'All',
+  deliveryType: 'branch',
+  selectedBranch: 'Almaty — Samal-2, ul. Dzhandosova 177a',
+  orderId: null,
+  orderTotal: 0,
+  paymentSuccess: null,
+  utmChannel: new URLSearchParams(location.search).get('utm_channel') || 'organic',
+  deviceOS: /iPhone|iPad|iPod/.test(navigator.userAgent) ? 'iOS' : /Android/.test(navigator.userAgent) ? 'Android' : 'Web',
+  marketplaceEngagement: 'passive_user',
+  orders: [
+    { id:'JP-018432', date:'3 Jun 2026', items:'Wireless Earbuds Pro', amount:'12,920 KZT', status:'Delivered', emoji:'✅' },
+    { id:'JP-011876', date:'12 May 2026', items:'Yoga Mat + Thermos', amount:'9,300 KZT', status:'Delivered', emoji:'✅' },
+  ]
+};
+
+// ─── AMPLITUDE ────────────────────────────────────────────────────────────────
+function initAmplitude() {
+  try {
+    // SDK already initialized via inline script in <head> (Amplitude's exact recommended pattern)
+    // This function only sets user identity properties
+    const id = new window.amplitude.Identify();
+    id.set('device_os', state.deviceOS);
+    id.set('utm_channel', state.utmChannel);
+    id.set('user_segment', 'casual_buyer');
+    id.set('country', 'Kazakhstan');
+    id.set('city', 'Almaty');
+    id.set('marketplace_engagement', 'passive_user');
+    window.amplitude.identify(id);
+    console.log('[Amplitude] ✓ User identified | device_os:', state.deviceOS, '| utm_channel:', state.utmChannel, '| Session Replay: active');
+  } catch(e) { console.warn('[Amplitude] Identify failed:', e); }
+}
+
+function track(event, props = {}) {
+  const base = { device_os: state.deviceOS, utm_channel: state.utmChannel, source: 'lovable_ui' };
+  try { window.amplitude.track(event, { ...base, ...props }); } catch(e) {}
+  console.log(`[Amplitude] ${event}`, { ...base, ...props });
+}
+
+function updateUserProp(key, value) {
+  try {
+    const id = new window.amplitude.Identify();
+    id.set(key, value);
+    window.amplitude.identify(id);
+  } catch(e) {}
+}
+
+// ─── ROUTER ───────────────────────────────────────────────────────────────────
+function navigate(screen, params = {}) {
+  Object.assign(state, params);
+  state.screen = screen;
+  render();
+  updateNav(screen);
+  document.getElementById('screen').scrollTop = 0;
+  track('page_view', { page: screen });
+}
+
+function updateNav(screen) {
+  ['home','marketplace','orders','profile'].forEach(s => {
+    const el = document.getElementById('nav-' + s);
+    if (el) el.classList.toggle('active', s === screen);
+  });
+}
+
+function render() {
+  const el = document.getElementById('screen');
+  el.classList.remove('screen-enter');
+  void el.offsetWidth; // reflow
+  el.classList.add('screen-enter');
+  const screens = { home: renderHome, marketplace: renderMarketplace, item: renderItem,
+    cart: renderCart, checkout: renderCheckout, payment: renderPayment, confirmed: renderConfirmed,
+    orders: renderOrders, profile: renderProfile };
+  el.innerHTML = (screens[state.screen] || renderHome)();
+  attachHandlers();
+  updateCartBadge();
+}
+
+// ─── CART HELPERS ─────────────────────────────────────────────────────────────
+function cartTotal() {
+  return state.cart.reduce((s, i) => s + (i.cny * 65 + i.kzt), 0);
+}
+function updateCartBadge() {
+  const el = document.getElementById('cart-count');
+  if (state.cart.length > 0) { el.textContent = state.cart.length; el.style.display = 'flex'; }
+  else { el.style.display = 'none'; }
+}
+function addToCart(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  state.cart.push(p);
+  updateCartBadge();
+  showToast('Added to cart 🛒');
+  track('Item Added to Cart', { item_name: p.name, item_id: p.id, item_price_cny: p.cny, shipping_kzt: p.kzt, category: p.cat });
+}
+function removeFromCart(idx) { state.cart.splice(idx, 1); render(); }
+
+// ─── TOAST ────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ─── SCREENS ─────────────────────────────────────────────────────────────────
+
+function renderHome() {
+  const popular = PRODUCTS.slice(0, 6);
+  return `
+    <div class="hero">
+      <h1>Order from China.<br>Delivered to Kazakhstan.</h1>
+      <p>Fast, reliable logistics from Chinese marketplaces to your door</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">500K+</div><div class="hero-stat-label">Users</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">500</div><div class="hero-stat-label">Branches</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">4M</div><div class="hero-stat-label">Parcels/mo</div></div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" id="search-input" placeholder="Search products from China..." />
+      <button onclick="doSearch()">Search</button>
+    </div>
+    <div class="categories" style="padding-top:28px;">
+      <div class="section-title" style="padding:0 0 12px;">Browse Categories</div>
+      <div class="category-grid">
+        ${CATEGORIES.map(c => `<div class="category-card" onclick="navigate('marketplace',{activeFilter:'${c.name === 'All' || c.name === 'Deals' ? 'All' : c.name}'})">`+
+          `<div class="cat-icon">${c.emoji}</div><div class="cat-name">${c.name}</div></div>`).join('')}
+      </div>
+    </div>
+    <div style="padding:20px 0 4px;">
+      <div class="section-title" style="padding:0 16px 12px;">🔥 Popular This Week</div>
+      <div class="popular-scroll">
+        ${popular.map(p => `
+          <div class="product-card scroll-card" onclick="navigate('item',{selectedProduct:${p.id}})">
+            <div class="product-img" style="background:${p.grad}">${p.emoji}</div>
+            <div class="product-info">
+              <div class="product-name">${p.name}</div>
+              <div class="product-price">¥${p.cny}</div>
+              <div class="product-shipping">+${p.kzt.toLocaleString()} KZT shipping</div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div style="height:20px;"></div>`;
+}
+
+function renderMarketplace() {
+  const filtered = state.activeFilter === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.cat === state.activeFilter);
+  const filters = ['All','Clothing','Electronics','Home Goods','Cosmetics','Toys','Sports'];
+  return `
+    <div class="filter-tabs">
+      ${filters.map(f => `<div class="filter-tab ${f===state.activeFilter?'active':''}" onclick="setFilter('${f}')">${f}</div>`).join('')}
+    </div>
+    <div class="product-grid">
+      ${filtered.map(p => `
+        <div class="product-card product-card-grid" onclick="navigate('item',{selectedProduct:${p.id}})">
+          <div class="product-img tall" style="background:${p.grad}">${p.emoji}</div>
+          <div class="product-info">
+            <div class="product-name">${p.name}</div>
+            <div class="product-price">¥${p.cny}</div>
+            <div class="product-shipping">+${p.kzt.toLocaleString()} KZT</div>
+            <button class="add-cart-mini" onclick="event.stopPropagation();addToCart(${p.id})">+ Add to Cart</button>
+          </div>
+        </div>`).join('')}
+    </div>
+    <div style="height:16px;"></div>`;
+}
+
+function renderItem() {
+  const p = PRODUCTS.find(x => x.id === state.selectedProduct);
+  if (!p) return renderHome();
+  return `
+    <div class="item-hero" style="background:${p.grad}">
+      <button class="back-btn" onclick="history.back()">←</button>
+      <span style="font-size:80px;">${p.emoji}</span>
+    </div>
+    <div class="item-body">
+      <div style="margin-bottom:8px;"><span class="tag tag-blue">${p.cat}</span></div>
+      <div class="item-title">${p.name}</div>
+      <div class="price-row">
+        <span class="price-cny">¥${p.cny}</span>
+        <span class="price-kzt">≈ ${(p.cny*65).toLocaleString()} KZT</span>
+      </div>
+      <div class="info-row">📦 Shipping cost <strong>${p.kzt.toLocaleString()} KZT</strong></div>
+      <div class="info-row">🕐 Delivery time <strong>14–21 days</strong></div>
+      <div class="info-row">📍 Origin <strong>Guangzhou, China</strong></div>
+      <div class="info-row">⭐ Rating <strong>4.7 / 5.0 (2,341 reviews)</strong></div>
+      <div class="item-desc">${p.desc}</div>
+      <button class="btn-primary" onclick="addToCartAndGo(${p.id})">🛒 Add to Cart</button>
+      <div style="height:10px;"></div>
+      <button class="btn-secondary" onclick="navigate('cart')">View Cart (${state.cart.length})</button>
+    </div>`;
+}
+
+function renderCart() {
+  if (state.cart.length === 0) {
+    return `<div class="empty-state">
+      <div class="empty-icon">🛒</div>
+      <div class="empty-title">Your cart is empty</div>
+      <div class="empty-sub">Browse our marketplace and find something you love from China</div>
+      <button class="btn-primary" style="width:200px;margin:0 auto;" onclick="navigate('marketplace')">Start Shopping</button>
+    </div>`;
+  }
+  const subtotalCny = state.cart.reduce((s,i)=>s+i.cny,0);
+  const shippingKzt = state.cart.reduce((s,i)=>s+i.kzt,0);
+  const totalKzt = Math.round(subtotalCny * 65 + shippingKzt);
+  return `
+    <div style="padding:16px 0 0;">
+      <div class="section-title" style="padding:0 16px 12px;">Cart (${state.cart.length} item${state.cart.length>1?'s':''})</div>
+      ${state.cart.map((p,i) => `
+        <div class="cart-item">
+          <div class="cart-item-img" style="background:${p.grad}">${p.emoji}</div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${p.name}</div>
+            <div class="cart-item-price">¥${p.cny} + ${p.kzt.toLocaleString()} KZT shipping</div>
+          </div>
+          <button class="remove-btn" onclick="removeFromCart(${i})">✕</button>
+        </div>`).join('')}
+      <div class="summary-box">
+        <div class="summary-row"><span>Subtotal (CNY)</span><span>¥${subtotalCny}</span></div>
+        <div class="summary-row"><span>Shipping to KZ</span><span>${shippingKzt.toLocaleString()} KZT</span></div>
+        <div class="summary-row total"><span>Total</span><span>${totalKzt.toLocaleString()} KZT</span></div>
+        <div class="rate-note">1 ¥ = 65 KZT (today's rate)</div>
+      </div>
+      <div style="padding:0 16px 16px;">
+        <button class="btn-primary" onclick="navigate('checkout')">Proceed to Checkout →</button>
+      </div>
+    </div>`;
+}
+
+function renderCheckout() {
+  const totalKzt = Math.round(state.cart.reduce((s,i)=>s+i.cny,0)*65 + state.cart.reduce((s,i)=>s+i.kzt,0));
+  const branches = ['Almaty — Samal-2, ul. Dzhandosova 177a','Almaty — Gagarin Ave 100/170','Almaty — Kabdolova st 22B','Astana — Abylai Khan Ave 31','Shymkent — Tauke Khan Ave 52'];
+  return `
+    <div style="padding-top:12px;">
+      <div class="form-section">
+        <div class="form-section-title">👤 Personal Details</div>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" value="Aibek Seitkali" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input class="form-input" value="+7 701 234 5678" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            IIN (Individual ID)
+            <span class="verified-badge">✓ Verified</span>
+          </label>
+          <input class="form-input" value="920415301234" />
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">📦 Delivery</div>
+        <div class="delivery-toggle">
+          <div class="delivery-opt ${state.deliveryType==='branch'?'active':''}" onclick="setDelivery('branch')">🏪 Branch Pickup</div>
+          <div class="delivery-opt ${state.deliveryType==='home'?'active':''}" onclick="setDelivery('home')">🏠 Home Delivery</div>
+        </div>
+        ${state.deliveryType==='branch' ? `
+          <label class="form-label">Select Branch</label>
+          <select class="branch-select" onchange="state.selectedBranch=this.value">
+            ${branches.map(b=>`<option ${b===state.selectedBranch?'selected':''}>${b}</option>`).join('')}
+          </select>` : `
+          <div class="form-group">
+            <label class="form-label">Delivery Address</label>
+            <input class="form-input" placeholder="Street, building, apartment" />
+          </div>`}
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">🧾 Order Summary</div>
+        ${state.cart.map(p=>`<div class="summary-row"><span>${p.name}</span><span>¥${p.cny}</span></div>`).join('')}
+        <div class="summary-row total"><span>Total</span><span>${totalKzt.toLocaleString()} KZT</span></div>
+      </div>
+      <div style="padding:0 16px 24px;">
+        <button class="btn-primary" onclick="placeOrder(${totalKzt})">Place Order & Pay →</button>
+      </div>
+    </div>`;
+}
+
+function renderPayment() {
+  const total = state.orderTotal;
+  if (state.paymentSuccess === null) {
+    // Loading state → auto-progress to result
+    setTimeout(() => processPayment(), 2000);
+    return `
+      <div class="payment-screen">
+        <div class="kaspi-header">
+          <div class="kaspi-logo">Kaspi Pay</div>
+          <div class="kaspi-sub">Secure payment · Kazakhstan</div>
+        </div>
+        <div class="payment-card-box">
+          <div class="card-chip">💳</div>
+          <div class="card-number">4400 4301 •••• ••••</div>
+          <div class="card-row">
+            <div><div class="card-label">CARDHOLDER</div><div class="card-value">AIBEK SEITKALI</div></div>
+            <div style="text-align:right"><div class="card-label">EXPIRES</div><div class="card-value">09/28</div></div>
+          </div>
+        </div>
+        <div class="amount-display">
+          <div class="amount-label">Amount to pay</div>
+          <div class="amount-value">${total.toLocaleString()} <span class="amount-currency">KZT</span></div>
+        </div>
+        <div style="text-align:center;padding:20px 0;">
+          <div class="spinner"></div>
+          <div style="font-size:14px;color:#6b7280;">Connecting to Kaspi Pay...</div>
+        </div>
+      </div>`;
+  }
+  if (state.paymentSuccess === false) {
+    return `
+      <div class="payment-screen">
+        <div class="kaspi-header">
+          <div class="kaspi-logo">Kaspi Pay</div>
+          <div class="kaspi-sub">Secure payment · Kazakhstan</div>
+        </div>
+        <div class="error-icon">⚠️</div>
+        <div class="error-title">Payment Failed</div>
+        <div class="error-msg">We couldn't connect to Kaspi Pay. This may be a temporary network issue. Please try again.</div>
+        <div class="error-code">ERR: kaspi_redirect_failed · ${state.deviceOS}</div>
+        <button class="btn-primary" style="margin-bottom:12px;" onclick="retryPayment(${total})">↩ Try Again</button>
+        <button class="btn-secondary" onclick="navigate('home')">Cancel Order</button>
+      </div>`;
+  }
+}
+
+function renderConfirmed() {
+  const orderId = state.orderId || 'JP-' + Math.floor(100000+Math.random()*900000);
+  state.orderId = orderId;
+  const newOrder = { id: orderId, date: new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}),
+    items: state.cart.map(p=>p.name).join(', ') || 'Order items', amount: state.orderTotal.toLocaleString() + ' KZT', status: 'In Transit', emoji: '🚚' };
+  if (!state.orders.find(o=>o.id===orderId)) state.orders.unshift(newOrder);
+  return `
+    <div class="success-anim">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Order Placed!</div>
+      <div class="success-sub">Your items are on their way from China.<br>Estimated delivery: <strong>14–21 days</strong></div>
+    </div>
+    <div class="order-info-box">
+      <div class="order-info-row"><span class="order-info-label">Order #</span><span class="order-info-value">${orderId}</span></div>
+      <div class="order-info-row"><span class="order-info-label">Total Paid</span><span class="order-info-value" style="color:#0066CC;">${state.orderTotal.toLocaleString()} KZT</span></div>
+      <div class="order-info-row"><span class="order-info-label">Pickup At</span><span class="order-info-value" style="font-size:12px;">${state.selectedBranch}</span></div>
+    </div>
+    <div class="tracking-steps">
+      <div class="section-title" style="margin-bottom:12px;">📍 Shipment Status</div>
+      <div class="tracking-step">
+        <div class="step-dot done">✓</div>
+        <div class="step-info"><div class="step-title">Order Received</div><div class="step-sub">Just now</div></div>
+      </div>
+      <div class="tracking-step">
+        <div class="step-dot active">2</div>
+        <div class="step-info"><div class="step-title">Warehouse Pickup (Guangzhou)</div><div class="step-sub">2–3 business days</div></div>
+      </div>
+      <div class="tracking-step">
+        <div class="step-dot pending">3</div>
+        <div class="step-info"><div class="step-title">In Transit to Kazakhstan</div><div class="step-sub">7–10 business days</div></div>
+      </div>
+      <div class="tracking-step">
+        <div class="step-dot pending">4</div>
+        <div class="step-info"><div class="step-title">Ready for Pickup</div><div class="step-sub">At selected branch</div></div>
+      </div>
+    </div>
+    <div style="padding:0 16px 24px;display:flex;flex-direction:column;gap:12px;">
+      <button class="btn-primary" onclick="navigate('orders')">📦 Track My Order</button>
+      <button class="btn-secondary" onclick="state.cart=[];navigate('marketplace')">Continue Shopping</button>
+    </div>`;
+}
+
+function renderOrders() {
+  if (state.orders.length === 0) {
+    return `<div class="empty-state"><div class="empty-icon">📭</div><div class="empty-title">No orders yet</div><div class="empty-sub">Your order history will appear here</div><button class="btn-primary" style="width:200px;margin:0 auto;" onclick="navigate('marketplace')">Start Shopping</button></div>`;
+  }
+  const statusColors = { 'Delivered':'tag-green', 'In Transit':'tag-blue', 'Ready for Pickup':'tag-orange' };
+  return `
+    <div style="padding:16px 0 0;">
+      <div class="section-title" style="padding:0 16px 16px;">My Orders</div>
+      ${state.orders.map(o=>`
+        <div class="order-item">
+          <div class="order-header">
+            <span class="order-num">#${o.id}</span>
+            <span class="tag ${statusColors[o.status]||'tag-blue'}">${o.emoji} ${o.status}</span>
+          </div>
+          <div class="order-items-preview">${o.items}</div>
+          <div class="order-footer">
+            <span class="order-date">📅 ${o.date}</span>
+            <span class="order-amount">${o.amount}</span>
+          </div>
+        </div>`).join('')}
+      <div style="height:16px;"></div>
+    </div>`;
+}
+
+function renderProfile() {
+  return `
+    <div class="profile-header">
+      <div class="profile-avatar">👤</div>
+      <div class="profile-name">Aibek Seitkali</div>
+      <div class="profile-email">aibek.s@gmail.com · Almaty</div>
+    </div>
+    <div class="profile-stats">
+      <div class="profile-stat"><div class="profile-stat-num">${state.orders.length}</div><div class="profile-stat-label">Orders</div></div>
+      <div class="profile-stat"><div class="profile-stat-num">${state.orders.filter(o=>o.status==='Delivered').length}</div><div class="profile-stat-label">Delivered</div></div>
+      <div class="profile-stat"><div class="profile-stat-num">${state.orders.filter(o=>o.status==='In Transit').length}</div><div class="profile-stat-label">In Transit</div></div>
+    </div>
+    <div style="height:16px;"></div>
+    <div class="menu-list">
+      <div class="menu-item"><div class="menu-icon">🏪</div><div class="menu-label">My Branch — Samal-2</div><div class="menu-arrow">›</div></div>
+      <div class="menu-item"><div class="menu-icon">🆔</div><div class="menu-label">IIN Verified ✓</div><div class="menu-arrow">›</div></div>
+      <div class="menu-item"><div class="menu-icon">🔔</div><div class="menu-label">Notifications</div><div class="menu-arrow">›</div></div>
+      <div class="menu-item"><div class="menu-icon">🌐</div><div class="menu-label">Language — English</div><div class="menu-arrow">›</div></div>
+      <div class="menu-item"><div class="menu-icon">❓</div><div class="menu-label">Help & FAQ</div><div class="menu-arrow">›</div></div>
+      <div class="menu-item" style="color:#EE3A2D;"><div class="menu-icon">🚪</div><div class="menu-label" style="color:#EE3A2D;">Log Out</div></div>
+    </div>
+    <div style="text-align:center;padding:16px;font-size:11px;color:#9ca3af;">Jańa Post v3.2.1 · UTM: ${state.utmChannel} · Device: ${state.deviceOS}</div>
+    <div style="height:8px;"></div>`;
+}
+
+// ─── ACTION HANDLERS ─────────────────────────────────────────────────────────
+function attachHandlers() {
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.addEventListener('keypress', e => { if (e.key === 'Enter') doSearch(); });
+  }
+}
+
+function doSearch() {
+  const q = document.getElementById('search-input')?.value?.trim();
+  if (!q) return;
+  track('Item Searched', { search_query: q, results_count: PRODUCTS.filter(p=>p.name.toLowerCase().includes(q.toLowerCase())).length });
+  navigate('marketplace');
+  showToast(`Searching for "${q}"`);
+}
+
+function setFilter(f) {
+  state.activeFilter = f;
+  // Track marketplace browse
+  state.marketplaceBrowseCount++;
+  track('Marketplace Browsed', { category: f, browse_session_number: state.marketplaceBrowseCount });
+  if (state.marketplaceBrowseCount >= 2 && state.marketplaceEngagement === 'passive_user') {
+    state.marketplaceEngagement = 'active_browser';
+    updateUserProp('marketplace_engagement', 'active_browser');
+  }
+  render();
+}
+
+function setDelivery(type) { state.deliveryType = type; render(); }
+
+function addToCartAndGo(id) {
+  addToCart(id);
+  navigate('cart');
+}
+
+function placeOrder(total) {
+  state.orderTotal = total;
+  state.paymentSuccess = null;
+  state.orderId = 'JP-' + Math.floor(100000+Math.random()*900000);
+  track('Order Created', { delivery_type: state.deliveryType, branch: state.selectedBranch, total_kzt: total, item_count: state.cart.length });
+  navigate('payment');
+}
+
+function processPayment() {
+  // 75% success, 25% error
+  const success = Math.random() < 0.75;
+  state.paymentSuccess = success;
+  if (success) {
+    track('Purchase Completed', { total_kzt: state.orderTotal, payment_method: 'kaspi_pay', order_id: state.orderId, order_number: 1 });
+    state.cart = [];
+    navigate('confirmed');
+  } else {
+    track('Payment Error', { error_type: 'kaspi_redirect_failed', payment_method: 'kaspi_pay', is_error: true, total_kzt: state.orderTotal });
+    render();
+  }
+}
+
+function retryPayment(total) {
+  // 85% success on retry
+  const success = Math.random() < 0.85;
+  if (success) {
+    track('Purchase Completed', { total_kzt: total, payment_method: 'kaspi_pay', order_id: state.orderId, retry_after_error: true, order_number: 1 });
+    state.cart = [];
+    state.paymentSuccess = null;
+    navigate('confirmed');
+  } else {
+    track('Payment Error', { error_type: 'kaspi_redirect_failed', payment_method: 'kaspi_pay', is_error: true, retry_attempt: true });
+    showToast('Payment failed again. Please try later.');
+  }
+}
+
+// Track marketplace browse on nav to marketplace
+const origNavigate = navigate;
+window.navigate = function(screen, params = {}) {
+  if (screen === 'marketplace') {
+    state.marketplaceBrowseCount++;
+    track('Marketplace Browsed', { category: state.activeFilter || 'All', browse_session_number: state.marketplaceBrowseCount });
+    if (state.marketplaceBrowseCount >= 2 && state.marketplaceEngagement === 'passive_user') {
+      state.marketplaceEngagement = 'active_browser';
+      updateUserProp('marketplace_engagement', 'active_browser');
+    }
+  }
+  origNavigate(screen, params);
+};
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  initAmplitude();
+  navigate('home');
+});
+</script>
+
+
+</body></html>
